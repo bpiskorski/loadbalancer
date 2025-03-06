@@ -2,7 +2,9 @@
 
 services:
   web1:
-    build: .
+    image: flask_app:latest
+    environment:
+      - SERVER_NAME=flask_app1
     ports:
       - "5000:5000"
     healthcheck:
@@ -14,7 +16,9 @@ services:
     networks:
       - webnet
   web2:
-    build: .
+    image: flask_app:latest
+    environment:
+      - SERVER_NAME=flask_app2
     ports:
       - "5001:5000"
     healthcheck:  
@@ -26,7 +30,9 @@ services:
     networks:
       - webnet
   web3:
-    build: .
+    image: flask_app:latest
+    environment:
+      - SERVER_NAME=flask_app3
     ports:
       - "5002:5000"
     healthcheck:  

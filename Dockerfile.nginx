@@ -2,5 +2,6 @@ FROM nginx:latest
 
 RUN apt-get update
 RUN apt-get install -y logrotate
-RUN chmod 644 /etc/logrotate.d/nginx  
+RUN chmod 644 /etc/logrotate.d/nginx 
+
 CMD ["nginx", "-g", "daemon off;"]
